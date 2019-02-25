@@ -5,6 +5,10 @@ def random_0_1():
     random.seed(datetime.datetime.now())
     return random.uniform(0,1)
 
+def select_any(options):
+    random.seed(datetime.datetime.now())
+    return random.choice(options)
+
 # options: Array of the options
 # weights: Array of the weights
 def select_with_weight(options, weights):
