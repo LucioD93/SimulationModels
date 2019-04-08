@@ -82,27 +82,25 @@ if __name__ == "__main__":
 
     menordef=10000000000000000000000000000000000
     preciodef=1000000000000000000000000000000000
+    print( "Menor R, Menor costo total")
 
-    # Hace 15 simulaciones.
     for i in range(15):
-        inicio=0
-        unidades_listas=0
-        unidades_espera=0
-        lista=[]
-        precio=1000000000000000000000000000000000000000000000000000000000000000000000000
-        while inicio!=30: #Simular un mes.
-            unidades_listas, unidades_espera, lista, costo= simulacion_diaria(unidades_listas, unidades_espera, lista)
-            if costo<precio:
-                precio=costo
-                menorR=unidades_listas
-            inicio+=1
-        
-        if precio<preciodef:
-            menordef=menorR
-            preciodef=precio
+        for i in range(1):
+            inicio=0
+            unidades_listas=0
+            unidades_espera=0
+            lista=[]
+            precio=1000000000000000000000000000000000000000000000000000000000000000000000000
+            while inicio!=30: #Simular un mes.
+                unidades_listas, unidades_espera, lista, costo= simulacion_diaria(unidades_listas, unidades_espera, lista)
+                if costo<precio:
+                    precio=costo
+                    menorR=unidades_listas
+                inicio+=1
+            
+            if precio<preciodef:
+                menordef=menorR
+                preciodef=precio
     
-    print( "La menor R es: ")
-    print (menordef)
-    print( "El menor costo total de variable:")
-    print (preciodef)
+        print (menordef, preciodef)
     
