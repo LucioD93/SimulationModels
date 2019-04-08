@@ -51,7 +51,7 @@ def simulacionEstacion(nPas,num,lista,tiempoInt,tiempoDes):
     nPas=nPas-nDes
     return nPas, lista,tiempoInt,tiempoDes, nEmb
 
-if __name__ == "__main__":
+def simulate():
 
     for i in range(1):
         estaciones=10
@@ -67,21 +67,20 @@ if __name__ == "__main__":
             num=num-1
             listaPas.append(nPas)
             listaEmb.append(nEmb)
-        print("Tiempo total del recorrido:")
-        print(tiempoInt+tiempoDes)
 
         sum=0
         for i in listaPas:
             sum=sum+i
         promedioPasajeros=sum/10
 
-        print("El promedio de pasajeros es:")
-        print(promedioPasajeros)
 
-        print("El número máximo de pasajeros embarcados")
-        print(max(listaEmb))
+        print(tiempoInt+tiempoDes, promedioPasajeros, max(listaEmb))
 
 
+if __name__ == "__main__":
+    print("tiempo_total promedio_pasajeros num_max")
+    for i in range(1000):
+        simulate()
 
 
 
