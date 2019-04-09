@@ -82,7 +82,7 @@ if __name__ == "__main__":
 
     menordef=10000000000000000000000000000000000
     preciodef=1000000000000000000000000000000000
-    print( "Menor R, Menor costo total")
+    print( "Menor_R  Menor_costo_total")
 
     for i in range(15):
         for i in range(1):
