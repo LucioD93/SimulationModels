@@ -16,7 +16,7 @@ class Ship():
     def add_day(self):
         self.days_waiting += 1
 
-if __name__ == "__main__":
+def simulate_ships():
 
     ship_queue = []
     # for i in range(100):
@@ -29,7 +29,7 @@ if __name__ == "__main__":
     ship_in_A = None
     ship_in_B = None
 
-    simulation_days = 100000
+    simulation_days = 365
     counter = 0
 
     ships_in_queue = []
@@ -74,9 +74,9 @@ if __name__ == "__main__":
         if len(ship_queue) > 0 and (remaining_A_days == 0 or remaining_B_days == 0):
             next_ship = ship_queue.pop(0)
             days_ship_waiting.append(next_ship.days_waiting)
-            print('pop', next_ship.type, ship.days_waiting)
+            #print('pop', next_ship.type, ship.days_waiting)
             if remaining_B_days == 0:
-                print (' in B')
+                #print(' in B')
                 ship_in_B = next_ship.type
                 B_is_empty = False
                 if ship_in_B == 'L':
@@ -88,7 +88,7 @@ if __name__ == "__main__":
             elif remaining_A_days == 0:
                 ship_in_A = next_ship
                 A_is_empty = False
-                print (' in A')
+                #print(' in A')
                 if ship_in_A == 'L':
                     remaining_A_days = 4
                 if ship_in_A == 'M':
@@ -101,8 +101,14 @@ if __name__ == "__main__":
         if empty_B_days:
             empty_B_days += 1
     
-    print('##################')
-    print empty_A_days
-    print empty_B_days
-    print sum(days_ship_waiting)/float(len(days_ship_waiting))
-    print sum(ships_in_queue)/float(simulation_days)
+    print( empty_A_days, empty_B_days,
+     sum(days_ship_waiting)/float(len(days_ship_waiting)), sum(ships_in_queue)/float(simulation_days))
+
+
+def n_simulations(n):
+    for i in range(n):
+        simulate_ships()
+
+if __name__ == "__main__":
+    print("A B promedioA promedioB")
+    n_simulations(1000)

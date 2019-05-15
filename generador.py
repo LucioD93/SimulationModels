@@ -30,3 +30,6 @@ def select_with_weight(options, weights):
         if i > r:
             # print(options[distribution.index(i)-1])
             return options[distribution.index(i)-1]
+
+def random_uniform_range(min, max):
+    return (random_0_1()*(max-min) + min)

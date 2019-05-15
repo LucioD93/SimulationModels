@@ -1,5 +1,7 @@
 from generador import select_with_weight
 
+#Ejercicio 8
+
 def simulate_seller():
     number_of_cars_options = [0,1,2,3,4,5]
     number_of_cars_weigths = [0.1,0.15,0.2,0.25,0.2,0.1]
@@ -31,11 +33,15 @@ def simulate_seller():
     return total
 
 def simulate_n_sellers(n):
+    print("comision")
     sellers = []
     for i in range(n):
         sellers.append(simulate_seller())
-    
-    return sum(sellers)/float(n)
+
+    for total in sellers:
+        print(total)
+
+    #return sum(sellers)/float(n)
 
 if __name__ == "__main__":
-    print(simulate_n_sellers(100000))
+    simulate_n_sellers(100)
